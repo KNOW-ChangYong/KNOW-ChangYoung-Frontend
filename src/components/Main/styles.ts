@@ -4,12 +4,10 @@ export const Container=styled.div`
     margin: 0 auto;
 `
 
-const FlexBox = styled.div`
+export const ProfileWrapper=styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-`
-export const ProfileWrapper= styled(FlexBox)`
     width: 95%;
     margin: 0 auto;
     margin-top: 30px;
@@ -18,7 +16,6 @@ export const ProfileWrapper= styled(FlexBox)`
         width: 50px;
         height: 50px;
         overflow: hidden;
-
     }
 `
 export const ProfileName=styled.p`
