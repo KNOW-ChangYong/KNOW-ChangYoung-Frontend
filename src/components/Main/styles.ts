@@ -36,3 +36,9 @@ export const AttendacneBT=styled.div`
     cursor: pointer;
     padding: 6px 15px;
 `
+export const NavigatorWrapper=styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+`
