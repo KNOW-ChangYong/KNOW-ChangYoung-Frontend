@@ -7,7 +7,7 @@ const ListItem = ({data}: {data:AttendanceResponse})=>  {
                 <img src="https://avatars.githubusercontent.com/u/78029308?s=200&v=4"></img>
             </td>
             <td>
-                <p>{data.name} / 학생</p>
+                <p>{data.name} / {data.name=="이동욱" ? "선생님" : "학생"}</p>
             </td>
             <td>
                 {

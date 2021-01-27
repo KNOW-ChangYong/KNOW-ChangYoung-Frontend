@@ -33,7 +33,7 @@ const Profile : React.FC = () => {
         <S.ProfileWrapper>
             <S.Wrapper>
                 <img src={img}></img>
-                <S.ProfileName>{name} <span>학생</span></S.ProfileName>
+                <S.ProfileName>{name} <span>{name=="이동욱" ? "선생님" : "학생"}</span></S.ProfileName>
             </S.Wrapper>
             <S.AttendacneBT onClick={Attendance}>출석</S.AttendacneBT>
         </S.ProfileWrapper>
