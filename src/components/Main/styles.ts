@@ -39,7 +39,7 @@ export const AttendacneBT=styled.div`
     cursor: pointer;
     padding: 6px 15px;
 `
-export const NavigatorWrapper=styled.div<{state : number}>`
+export const NavigatorWrapper=styled.div<{state : string}>`
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -60,7 +60,7 @@ export const NavigatorWrapper=styled.div<{state : number}>`
     & div:nth-child(3){
         margin-right: 10px;
     }
-    & div:nth-child(${props=>props.state}){
+    & div:nth-child(${props=>props.state=="today" ? 1 : props.state=="all" ? 2 : 3}){
         background: #CB9B55 !important;
         color: white !important;
     }
@@ -74,6 +74,7 @@ export const NavigatorBT=styled.div`
     cursor: pointer;
     padding: 7px 15px;
     font-size: 14px;
+    transition: 0.3s;
     
 `
 export const ListWrapper=styled.div`
@@ -98,7 +99,7 @@ export const ListTable= styled.table`
     & thead{
         background: #EEEEEE;
         color: #CB9B55;
-        font-size: 10px;
+        font-size: 12px;
     }
     & th:first-child{
         border-radius:10px 0 0 10px;
@@ -126,7 +127,7 @@ export const ListTable= styled.table`
     }
 `
 export const ListTitle=styled.h3`
-    color: #F8F8F8;
+    color: #cc9b55;
 `
 export const ListTime=styled.p`
     color:#A1927F;
@@ -135,6 +136,7 @@ export const ListTime=styled.p`
 `
 export const Sayingwrapper=styled.div`
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -177,5 +179,18 @@ export const BackgroundWrapper=styled.div`
         left: 0;
         z-index: -1;
         opacity: 0.1;
+    }
+`
+export const FooterWrapper=styled.div`
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    & img{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    & p {
+        font-size: 12px;
     }
 `

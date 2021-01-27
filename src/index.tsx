@@ -2,11 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { Provider } from "react-redux"
+import { createStore, applyMiddleware, Middleware, StoreEnhancer } from "redux";
+import rootReducer from "./stores/reducers"
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "./sagas/saga";
+const sagaMiddleware = createSagaMiddleware();
+const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
+  if (process.env.NODE_ENV !== 'production') {
+    const { composeWithDevTools } = require('redux-devtools-extension');
+    return composeWithDevTools(applyMiddleware(...middleware));
+  }
+  return applyMiddleware(...middleware);
+};
+const store = createStore(rootReducer, bindMiddleware([sagaMiddleware]));
+sagaMiddleware.run(rootSaga);
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
