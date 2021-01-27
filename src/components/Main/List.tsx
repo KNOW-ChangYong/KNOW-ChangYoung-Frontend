@@ -36,7 +36,7 @@ const List : React.FC = () => {
                     <tr>
                         <th>프로필</th>
                         <th>이름 / 계급</th>
-                        <th>출석 / 미출석</th>
+                        <th>{navstate.attendanceCount ? "출석 / 미출석" : "출석 시간"}</th>
                     </tr>
                 </thead>
                 <tbody>
