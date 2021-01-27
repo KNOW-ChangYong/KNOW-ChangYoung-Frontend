@@ -1,8 +1,11 @@
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import { ModalState } from "../../actions/actions";
 import * as S from "./styles"
 function SayingModal(){
     const [say, setSay] = useState("");
+    const dispatch=useDispatch();
     function sayHandler(e : ChangeEvent<HTMLInputElement>){
         setSay(e.target.value);
     }
@@ -20,7 +23,7 @@ function SayingModal(){
                 Authorization : `Bearer ${localStorage.token}`
             }
         })
-        .then((res)=>alert("명언이 등록되었습니다."))
+        .then((res)=>{ alert("명언이 등록되었습니다."); dispatch(ModalState("")) })
 
     }
     return(
