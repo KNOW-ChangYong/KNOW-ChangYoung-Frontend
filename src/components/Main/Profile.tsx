@@ -10,7 +10,7 @@ const Profile : React.FC = () => {
             alert("출석체크 시간이 아닙니다");
             return;
         }
-        axios.post(`http://180.228.167.34:3002/attendance`,"",{
+        axios.post(`https://changapi.eungyeol.live/attendance`,"",{
             headers: {
                 'Content-Type' : "application/json; charset=UTF-8",
                 Authorization : `Bearer ${localStorage.token}`
@@ -20,7 +20,7 @@ const Profile : React.FC = () => {
         .catch((e)=>alert(e))
     }
     useEffect(()=>{
-        axios.get(`http://180.228.167.34:3002/student`,{
+        axios.get(`https://changapi.eungyeol.live/student`,{
             headers: {
                 'Content-Type' : "application/json; charset=UTF-8",
                 Authorization : `Bearer ${localStorage.token}`
