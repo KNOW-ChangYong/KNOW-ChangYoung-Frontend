@@ -12,7 +12,7 @@ function SayingModal(){
             alert("명언이 입력되지 않았습니다.");
             return;
         }
-        axios.post(`http://180.228.167.34:3002/saying`,{
+        axios.post(`https://changapi.eungyeol.live/saying`,{
             content : say
         },{
             headers: {

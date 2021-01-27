@@ -16,7 +16,7 @@ function Login(){
             alert("닉네임 또는 인증코드가 입력되지 않았습니다.");
             return;
         }
-        axios.post(`http://180.228.167.34:3002/auth?time=${new Date().getTime()}`,{
+        axios.post(`https://changapi.eungyeol.live/auth?time=${new Date().getTime()}`,{
             id : code,
             nickname : name 
         })

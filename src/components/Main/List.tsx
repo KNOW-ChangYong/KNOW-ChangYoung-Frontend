@@ -19,9 +19,9 @@ const List : React.FC = () => {
     }
     async function getAttendance(){
         let temp;
-        if(navstate=="today") temp=await axios.get(`http://180.228.167.34:3002/attendance/${getFormatDate(new Date())}`)
-        else if(navstate=="private") temp=await axios.get(`http://180.228.167.34:3002/attendance/profile/${localStorage.userId}`)
-        else temp=await axios.get("http://180.228.167.34:3002/attendance")
+        if(navstate=="today") temp=await axios.get(`https://changapi.eungyeol.live/attendance/${getFormatDate(new Date())}`)
+        else if(navstate=="private") temp=await axios.get(`https://changapi.eungyeol.live/attendance/profile/${localStorage.userId}`)
+        else temp=await axios.get("https://changapi.eungyeol.live/attendance")
         setData(temp.data)
     }
     useEffect(()=>{

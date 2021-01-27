@@ -11,7 +11,7 @@ const Saying : React.FC = () => {
     const dispatch =useDispatch();
     const [data,setData]=useState<sayingResponse>({content: "배고프다", name: "안은결"});
     useEffect(()=>{
-        axios.get("http://180.228.167.34:3002/saying")
+        axios.get("https://changapi.eungyeol.live/saying")
         .then((res)=>{
             setData(res.data);
         })
