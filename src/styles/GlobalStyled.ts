@@ -14,5 +14,6 @@ export const GlobalStyled = createGlobalStyle`
     body{
         margin: 0;
         background: #0F0A0F;
+        overflow-y: hidden;
     }
 `
