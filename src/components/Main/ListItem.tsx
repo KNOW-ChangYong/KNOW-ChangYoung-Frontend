@@ -12,7 +12,7 @@ const ListItem = ({data}: {data:AttendanceResponse})=>  {
             <td>
                 {
                     data.dateTime?
-                        <p>{data.dateTime}</p>
+                        <p>{data.dateTime.toString().replace("T","일 ")}</p>
                     :
                         <p>{data.attendanceCount} / {data.notAttendanceCount}</p>
                 }

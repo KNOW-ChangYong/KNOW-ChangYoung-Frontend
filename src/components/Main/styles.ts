@@ -79,7 +79,7 @@ export const NavigatorBT=styled.div`
 `
 export const ListWrapper=styled.div`
     list-style: none;
-    height: 100vh;
+    min-height: 100vh;
     width: 92%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
