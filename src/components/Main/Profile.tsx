@@ -2,7 +2,7 @@ import * as S from "./styles"
 import axios from "axios";
 import { useEffect, useState } from "react";
 const Profile : React.FC = () => {
-    const [name,setName] = useState("anymouse");
+    const [name,setName] = useState("이동욱");
     function Attendance(){
         const now=new Date();
         if(!(now.getHours()>=6 && now.getHours()<=9)){
