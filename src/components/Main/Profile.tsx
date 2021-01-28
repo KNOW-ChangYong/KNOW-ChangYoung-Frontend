@@ -1,5 +1,4 @@
 import * as S from "./styles"
-import img from "./img.png"
 import axios from "axios";
 import { useEffect, useState } from "react";
 const Profile : React.FC = () => {
@@ -32,7 +31,7 @@ const Profile : React.FC = () => {
     return(
         <S.ProfileWrapper>
             <S.Wrapper>
-                <img src={img}></img>
+                <img src={require(`./userimages/${name}.jpg`).default}></img>
                 <S.ProfileName>{name} <span>{name=="이동욱" ? "선생님" : "학생"}</span></S.ProfileName>
             </S.Wrapper>
             <S.AttendacneBT onClick={Attendance}>출석</S.AttendacneBT>

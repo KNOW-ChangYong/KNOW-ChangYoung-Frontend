@@ -1,10 +1,9 @@
 import { AttendanceResponse } from "../../interfaces";
-
 const ListItem = ({data}: {data:AttendanceResponse})=>  {
     return(
         <tr>
             <td>
-                <img src="https://avatars.githubusercontent.com/u/78029308?s=200&v=4"></img>
+                <img src={require(`./userimages/${data.name}.jpg`).default}></img>
             </td>
             <td>
                 <p>{data.name} / {data.name=="이동욱" ? "선생님" : "학생"}</p>

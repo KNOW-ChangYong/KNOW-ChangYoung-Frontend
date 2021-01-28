@@ -17,6 +17,7 @@ export const ProfileWrapper=styled.div`
         width: 50px;
         height: 50px;
         overflow: hidden;
+        object-fit: cover;
     }
 `
 export const Wrapper = styled.div`
@@ -124,6 +125,7 @@ export const ListTable= styled.table`
         margin-top: 10px;
         background: white;
         border-radius: 50%;
+        object-fit: cover;
     }
 `
 export const ListTitle=styled.h3`
