@@ -4,6 +4,7 @@ import Main from "./components/Main/Main";
 import Modal from "./components/Modals/Modal";
 import Login from "./components/Login/Login";
 import kakao from "./components/Kakao/Kakao";
+import KakaoAttendance from "./components/Kakao/KakaoAttendance";
 function App() {
   return (
     <Router>
@@ -12,6 +13,7 @@ function App() {
       <Route exact path="/" component={Main}></Route>
       <Route exact path="/login" component={Login}></Route>
       <Route exact path="/kakao" component={kakao}></Route>
+      <Route exact path="/attendance" component={KakaoAttendance}></Route>
     </Router>
   );
 }
