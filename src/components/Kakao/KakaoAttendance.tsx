@@ -15,9 +15,9 @@ function KakaoAttendance(){
                 Authorization : `Bearer ${localStorage.token}`
             }
         })
-        .then((res)=>{alert("출석체크에 성공하였습니다.")})
-        .catch((e)=>{ e.response.data.error==="Conflict" ? alert("이미 출석된 상태입니다.") : alert("출석체크 시간이 아닙니다.") })
-        window.location.href="/"
+        .then((res)=>{alert("출석체크에 성공하였습니다."); window.location.href="/";})
+        .catch((e)=>{ e.response.data.error==="Conflict" ? alert("이미 출석된 상태입니다.") : alert("출석체크 시간이 아닙니다."); window.location.href="/" })
+        
     }
     useEffect(()=>{
         Attendance()
