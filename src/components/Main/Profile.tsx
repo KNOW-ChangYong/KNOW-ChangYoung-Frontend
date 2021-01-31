@@ -16,7 +16,7 @@ const Profile : React.FC = () => {
             }
         })
         .then((res)=>alert("출석체크에 성공하였습니다."))
-        .catch((e)=>{ e.response.data.error==="Conflict" ? alert("이미 출석된 상태입니다.") : alert("출석체크 시간이 아닙니다.") })
+        .catch((e)=>{ e.response.data.status===429 ? alert("이미 출석된 상태입니다.") : alert("출석체크 시간이 아닙니다.") })
     }
     useEffect(()=>{
         axios.get(`https://changapi.eungyeol.live/student`,{
