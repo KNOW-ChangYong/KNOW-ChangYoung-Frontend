@@ -4,9 +4,10 @@ import { useEffect } from "react";
 function KakaoAttendance(){
     function Attendance(){
         const now=new Date();
-        if(!(now.getHours()>=6 && ( now.getHours()<=8 && now.getMinutes()<2))){
+        const startTime = new Date(`${now.getFullYear()}-${now.getDay()}-${now.getDate()} 6:00:00`)
+        const endTime = new Date(`${now.getFullYear()}-${now.getDay()}-${now.getDate()} 8:01:00`)
+        if(!(now>=startTime && now<=endTime)){
             alert("출석체크 시간이 아닙니다");
-            window.location.href="/"
             return;
         }
         axios.post(`https://changapi.eungyeol.live/attendance`,"",{
