@@ -5,7 +5,9 @@ const Profile : React.FC = () => {
     const [name,setName] = useState("이동욱");
     function Attendance(){
         const now=new Date();
-        if(!(now.getHours()>=6 && now.getHours()<=9)){
+        const startTime = new Date(`${now.getFullYear()}-${now.getDay()}-${now.getDate()} 6:00:00`)
+        const endTime = new Date(`${now.getFullYear()}-${now.getDay()}-${now.getDate()} 8:01:00`)
+        if(!(now>=startTime && now<=endTime)){
             alert("출석체크 시간이 아닙니다");
             return;
         }

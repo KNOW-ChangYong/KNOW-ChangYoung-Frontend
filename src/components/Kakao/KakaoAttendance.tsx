@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function KakaoAttendance(){
     function Attendance(){
         const now=new Date();
-        if(!(now.getHours()>=6 && now.getHours()<=9)){
+        if(!(now.getHours()>=6 && ( now.getHours()<=8 && now.getMinutes()<2))){
             alert("출석체크 시간이 아닙니다");
             window.location.href="/"
             return;
