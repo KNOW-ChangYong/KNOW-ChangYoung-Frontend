@@ -11,10 +11,10 @@ const Profile : React.FC = () => {
         console.log(startTime);
         console.log(endTime);
         if(!(now>=startTime && now<=endTime)){
-            alert("출석체크 시간이 아닙니다");
+            alert("출석체크 시간이 아닙니다2");
             return;
         }
-        axios.post(`https://changapi.eungyeol.live/attendance`,"",{
+        axios.post(`https://changapi.eungyeol.live/attendance?time=2`,"",{
             headers: {
                 'Content-Type' : "application/json; charset=UTF-8",
                 Authorization : `Bearer ${localStorage.token}`
