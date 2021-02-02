@@ -1,10 +1,19 @@
 import { start } from "repl";
 
 function test(){
+    function getFormatDate(date){
+        var year = date.getFullYear();
+        var month = (1 + date.getMonth());
+        month = month >= 10 ? month : '0' + month;
+        var day = date.getDate();
+        day = day >= 10 ? day : '0' + day;
+        return year + '-' + month + '-' + day;
+    }
     function time(){
         const now=new Date();
-        const startTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 6:00:00`)
-        const endTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 8:01:00`)
+        const startTime = new Date(`${getFormatDate(now)} 6:00:00`)
+        const endTime = new Date(`${getFormatDate(now)}-${now.getDate()} 8:01:00`)
+        console.log(now.getDay)
         alert(now);
         alert(startTime);
         alert(endTime);
