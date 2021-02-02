@@ -13,7 +13,7 @@ function kakao(){
         const { data } = await axios.get("https://changapi.eungyeol.live/attendance/attendancestatus")
         console.log(`${(data.lastDayGraph*100).toFixed(1)}% -> ${(data.todayGraph*100).toFixed(1)}% ( ${(data.todayGraph*100-data.lastDayGraph*100).toFixed(1)}% )`)
         const now:Date = new Date();
-        if(now.getHours()===15){
+        if(now.getHours()===8){
             let content:any=[];
             for(let i=1;i<=data.studentResponses.length;i++){
                 if(paginate(data.studentResponses,3,i).length===0) break;
