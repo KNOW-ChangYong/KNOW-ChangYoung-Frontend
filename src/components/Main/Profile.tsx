@@ -10,7 +10,7 @@ const Profile : React.FC = () => {
         console.log(now);
         console.log(startTime);
         console.log(endTime);
-        if(!(now>startTime && now<endTime)){
+        if(!(now>=startTime && now<=endTime)){
             alert("출석체크 시간이 아닙니다");
             return;
         }
