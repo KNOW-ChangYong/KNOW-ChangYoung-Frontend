@@ -18,7 +18,7 @@ function kakao(){
             for(let i=1;i<=data.studentResponses.length;i++){
                 if(paginate(data.studentResponses,3,i).length===0) break;
                 content=[...content,{
-                    title: i===1 ? '최종 미출석자 : ' : 'and',
+                    title: i===1 ? `최종 미출석자 : ${data.studentResponses.length}명` : 'and',
                     description: `${(paginate(data.studentResponses,3,i).map((i : any)=> i.name)).join(", ")}`,
                     imageUrl: '',
                     link: {
