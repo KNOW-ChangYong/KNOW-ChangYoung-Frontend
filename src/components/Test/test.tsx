@@ -1,7 +1,7 @@
 import { start } from "repl";
 
 function test(){
-    function getFormatDate(date){
+    function getFormatDate(date: Date){
         var year = date.getFullYear();
         var month = (1 + date.getMonth());
         month = month >= 10 ? month : '0' + month;
@@ -12,7 +12,7 @@ function test(){
     function time(){
         const now=new Date();
         const startTime = new Date(`${getFormatDate(now)} 6:00:00`)
-        const endTime = new Date(`${getFormatDate(now)}-${now.getDate()} 8:01:00`)
+        const endTime = new Date(`${getFormatDate(now)}} 8:01:00`)
         console.log(now.getDay)
         alert(now);
         alert(startTime);
