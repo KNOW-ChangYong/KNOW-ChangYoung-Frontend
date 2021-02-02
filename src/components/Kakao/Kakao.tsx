@@ -13,12 +13,12 @@ function kakao(){
         const { data } = await axios.get("https://changapi.eungyeol.live/attendance/attendancestatus")
         console.log(`${(data.lastDayGraph*100).toFixed(1)}% -> ${(data.todayGraph*100).toFixed(1)}% ( ${(data.todayGraph*100-data.lastDayGraph*100).toFixed(1)}% )`)
         const now:Date = new Date();
-        if(now.getHours()===8){
+        if(now.getHours()===15){
             let content:any=[];
             for(let i=1;i<=data.studentResponses.length;i++){
                 if(paginate(data.studentResponses,3,i).length===0) break;
                 content=[...content,{
-                    title: i===1 ? '최종 미출석자 : ' : 'and',
+                    title: i===1 ? `최종 미출석자 : ${data.studentResponses.length}명` : 'and',
                     description: `${(paginate(data.studentResponses,3,i).map((i : any)=> i.name)).join(", ")}`,
                     imageUrl: '',
                     link: {
