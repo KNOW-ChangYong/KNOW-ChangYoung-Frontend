@@ -6,10 +6,10 @@ function KakaoAttendance(){
         const now=new Date();
         const startTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 6:00:00`)
         const endTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 8:01:00`)
-        if(!(now>=startTime && now<=endTime)){
-            alert("출석체크 시간이 아닙니다");
-            return;
-        }
+        //if(!(now>=startTime && now<=endTime)){
+         //   alert("출석체크 시간이 아닙니다");
+         //   return;
+        //}
         axios.post(`https://changapi.eungyeol.live/attendance`,"",{
             headers: {
                 'Content-Type' : "application/json; charset=UTF-8",
