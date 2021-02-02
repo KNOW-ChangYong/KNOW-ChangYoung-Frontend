@@ -5,15 +5,12 @@ const Profile : React.FC = () => {
     const [name,setName] = useState("이동욱");
     function Attendance(){
         const now=new Date();
-        const startTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 6:00:00`)
-        const endTime = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} 8:01:00`)
-        console.log(now);
-        console.log(startTime);
-        console.log(endTime);
-        //if(!(now>=startTime && now<=endTime)){
-        //    alert("출석체크 시간이 아닙니다2");
-         //   return;
-        //}
+        const startTime = new Date(`${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} 6:00:00`)
+        const endTime = new Date(`${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} 8:01:00`)
+        if(!(now>=startTime && now<=endTime)){
+            alert("출석체크 시간이 아닙니다");
+            return;
+        }
         axios.post(`https://changapi.eungyeol.live/attendance?time=2`,"",{
             headers: {
                 'Content-Type' : "application/json; charset=UTF-8",
